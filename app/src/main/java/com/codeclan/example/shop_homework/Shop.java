@@ -15,4 +15,12 @@ public class Shop {
     public int getBalance() {
         return balance;
     }
+
+    public void sellGoods(int goods) {
+        this.balance += goods;
+    }
+
+    public void giveRefund(int refund) {
+        this.balance -= refund;
+    }
 }
