@@ -24,11 +24,6 @@ public class ShopTest {
 
     @Before
     public void before() {
-        shop1 = new Shop(5000);
-        shop2 = new Shop(3500);
-
-        customer1 = new Customer("Anna", 500);
-        customer2 = new Customer("Elsa", 450);
 
         sales = new ArrayList<Integer>();
         sales.add(150);
@@ -39,7 +34,15 @@ public class ShopTest {
         refunds.add(20);
         refunds.add(50);
         refunds.add(100);
-        }
+
+        shop1 = new Shop(5000, sales, refunds);
+        shop2 = new Shop(3500, sales, refunds);
+
+        customer1 = new Customer("Anna", 500);
+        customer2 = new Customer("Elsa", 450);
+    }
+
+
 
     @Test
     public void testGetBalance() {
@@ -62,10 +65,13 @@ public class ShopTest {
         assertEquals(550, customer1.getMoney());
     }
 
-//    @Test
-//    public void testTotalSalesMinusTotalRefunds() {
-//        shop1.totalSales(1500);
-//        shop1.totalRefunds(200);
-//        assertEquals(1300, shop1.getBalance());
-//    }
+    @Test
+    public void testTotalSales() {
+        assertEquals(750, shop1.totalSales());
+    }
+
+    @Test
+    public void testTotalRefunds() {
+
+    }
 }

@@ -1,5 +1,6 @@
 package com.codeclan.example.shop_homework;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -12,10 +13,10 @@ public class Shop {
     private ArrayList<Integer> sales;
     private ArrayList<Integer> refunds;
 
-    public Shop(int balance) {
+    public Shop(int balance, ArrayList<Integer> sales, ArrayList<Integer> refunds) {
         this.balance = balance;
-        sales = new ArrayList<Integer>();
-        refunds = new ArrayList<Integer>();
+        this.sales = sales;
+        this.refunds = refunds;
     }
 
     public int getBalance() {
@@ -28,6 +29,15 @@ public class Shop {
 
     public void giveRefund(int refund) {
         this.balance -= refund;
+    }
+
+
+    public int totalSales() {
+        int totalSales = 0;
+        for(int sale : this.sales) {
+            totalSales += sale;
+        }
+        return totalSales;
     }
 
 }
