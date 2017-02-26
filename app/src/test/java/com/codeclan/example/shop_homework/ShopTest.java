@@ -51,28 +51,28 @@ public class ShopTest {
 
     @Test
     public void testSellGoods() {
-        shop2.sellGoods(200);
-        customer1.buy(200);
+        shop2.sellGoods(200, customer1);
         assertEquals(3700, shop2.getBalance());
-        assertEquals(300, customer1.getMoney());
     }
 
     @Test
     public void testGiveRefund() {
-        shop1.giveRefund(50);
-        customer1.getRefund(50);
+        shop1.giveRefund(50, customer1);
         assertEquals(4950, shop1.getBalance());
-        assertEquals(550, customer1.getMoney());
     }
 
     @Test
     public void testTotalSales() {
-        assertEquals(750, shop1.totalSales());
+        shop1.sellGoods(10, customer1);
+        assertEquals(760, shop1.totalSales());
+        assertEquals(5010, shop1.getBalance());
     }
 
     @Test
     public void testTotalRefunds() {
-        assertEquals(170, shop1.totalRefunds());
+        shop1.giveRefund(20, customer1);
+        assertEquals(190, shop1.totalRefunds());
+        assertEquals(4980, shop1.getBalance());
     }
 
     @Test

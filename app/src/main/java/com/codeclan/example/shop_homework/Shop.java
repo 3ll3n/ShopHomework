@@ -23,12 +23,16 @@ public class Shop {
         return balance;
     }
 
-    public void sellGoods(int goods) {
+    public void sellGoods(int goods, Customer customer) {
+        customer.buy(goods);
         this.balance += goods;
+        this.sales.add(goods);
     }
 
-    public void giveRefund(int refund) {
+    public void giveRefund(int refund, Customer customer) {
+        customer.getRefund(refund);
         this.balance -= refund;
+        this.refunds.add(refund);
     }
 
 
