@@ -74,4 +74,9 @@ public class ShopTest {
     public void testTotalRefunds() {
         assertEquals(170, shop1.totalRefunds());
     }
+
+    @Test
+    public void testTotalSalesMinusTotalRefunds() {
+        assertEquals(580, shop1.totalIncome());
+    }
 }
