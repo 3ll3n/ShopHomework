@@ -12,7 +12,8 @@ public class Transaction {
     private ArrayList<Integer> refunds;
 
     public Transaction() {
-
+        sales = new ArrayList<Integer>();
+        refunds = new ArrayList<Integer>();
     }
 
 
