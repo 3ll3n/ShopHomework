@@ -53,12 +53,14 @@ public class ShopTest {
     public void testSellGoods() {
         shop2.sellGoods(200, customer1);
         assertEquals(3700, shop2.getBalance());
+        assertEquals(300, customer1.getMoney());
     }
 
     @Test
     public void testGiveRefund() {
         shop1.giveRefund(50, customer1);
         assertEquals(4950, shop1.getBalance());
+        assertEquals(550, customer1.getMoney());
     }
 
     @Test
