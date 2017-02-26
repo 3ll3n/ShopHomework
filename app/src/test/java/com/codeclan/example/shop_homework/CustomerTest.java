@@ -36,4 +36,11 @@ public class CustomerTest {
         customer1.buy(200);
         assertEquals(300, customer1.getMoney());
     }
+
+    @Test
+    public void testGetRefund() {
+        customer2.buy(100);
+        customer2.getRefund(100);
+        assertEquals(450, customer2.getMoney());
+    }
 }

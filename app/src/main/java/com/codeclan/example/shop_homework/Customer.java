@@ -25,4 +25,8 @@ public class Customer {
     public void buy(int purchase) {
         this.money -= purchase;
     }
+
+    public void getRefund(int refund) {
+        this.money += refund;
+    }
 }
