@@ -40,4 +40,11 @@ public class Shop {
         return totalSales;
     }
 
+    public int totalRefunds() {
+        int totalRefunds = 0;
+        for(int i = 0; i < refunds.size(); i++) {
+            totalRefunds += this.refunds.get(i);
+        }
+        return totalRefunds;
+    }
 }
