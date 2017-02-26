@@ -3,6 +3,8 @@ package com.codeclan.example.shop_homework;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -17,6 +19,9 @@ public class ShopTest {
     Customer customer1;
     Customer customer2;
 
+    private ArrayList<Integer> sales;
+    private ArrayList<Integer> refunds;
+
     @Before
     public void before() {
         shop1 = new Shop(5000);
@@ -24,7 +29,17 @@ public class ShopTest {
 
         customer1 = new Customer("Anna", 500);
         customer2 = new Customer("Elsa", 450);
-    }
+
+        sales = new ArrayList<Integer>();
+        sales.add(150);
+        sales.add(200);
+        sales.add(400);
+
+        refunds = new ArrayList<Integer>();
+        refunds.add(20);
+        refunds.add(50);
+        refunds.add(100);
+        }
 
     @Test
     public void testGetBalance() {
