@@ -23,4 +23,5 @@ public class Shop {
     public void giveRefund(int refund) {
         this.balance -= refund;
     }
+
 }

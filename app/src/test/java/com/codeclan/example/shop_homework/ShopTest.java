@@ -46,4 +46,11 @@ public class ShopTest {
         assertEquals(4950, shop1.getBalance());
         assertEquals(550, customer1.getMoney());
     }
+
+//    @Test
+//    public void testTotalSalesMinusTotalRefunds() {
+//        shop1.totalSales(1500);
+//        shop1.totalRefunds(200);
+//        assertEquals(1300, shop1.getBalance());
+//    }
 }
